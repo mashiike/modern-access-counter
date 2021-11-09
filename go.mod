@@ -9,7 +9,7 @@ require (
 	github.com/fujiwara/logutils v1.1.0
 	github.com/fujiwara/ridge v0.6.1
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
-	github.com/mashiike/setddblock v0.3.0
+	github.com/mashiike/setddblock v0.3.1
 	golang.org/x/image v0.0.0-20211028202545-6944b10bf410
 )
 
