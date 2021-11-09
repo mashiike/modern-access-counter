@@ -223,12 +223,12 @@ func getCounter(ctx context.Context) (Counter, error) {
 
 //from https://qiita.com/tng527/items/7af65659f7666a122da2
 func generateCounterImage(counter Counter) (image.Image, error) {
-	img := image.NewRGBA(image.Rect(0, 0, 240, 60))
+	img := image.NewRGBA(image.Rect(0, 0, 850, 60))
 	tt, err := truetype.Parse(gobold.TTF)
 	if err != nil {
 		return nil, err
 	}
-	fontsize := float64(img.Rect.Dx()) * 0.25 * 0.8 / 1.333
+	fontsize := float64(36.0)
 
 	d := &font.Drawer{
 		Dst: img,
@@ -239,10 +239,10 @@ func generateCounterImage(counter Counter) (image.Image, error) {
 			},
 		),
 		Dot: fixed.Point26_6{
-			X: fixed.Int26_6(((float64(img.Rect.Dx()) / 2) - fontsize*2/1.333) * 64),
+			X: fixed.Int26_6(0),
 			Y: fixed.Int26_6((img.Rect.Dy() - 20) * 64),
 		},
 	}
-	d.DrawString(fmt.Sprintf("%04d access", counter.Visit))
+	d.DrawString(fmt.Sprintf("%05d access at %s", counter.Visit, counter.LastAccess.Format(time.RFC1123)))
 	return img, nil
 }

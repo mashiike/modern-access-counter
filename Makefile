@@ -20,3 +20,7 @@ deploy: bootstrap
 .PHONY: deploy-dry-run
 deploy-dry-run: bootstrap
 	lambroll --tfstate terraform/.terraform/terraform.tfstate deploy --dry-run
+
+.PHONY: reset-counter
+reset-counter:
+	aws s3 rm s3://${S3_BUCKET}/${S3_OBJECT_PATH}
