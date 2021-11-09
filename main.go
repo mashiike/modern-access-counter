@@ -187,7 +187,7 @@ func handleRoot(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	w.Header().Set("Content-Type", "text/html")
-	fmt.Fprintf(w, `<html><head><title>modern-access-counter</title></head><body>%d<br><img src="/counter.gif"/><br></body><html>`, counter.Visit)
+	fmt.Fprintf(w, `<html><head><title>modern-access-counter</title></head><body>Welcome, %d people including you visited<br><img src="/counter.gif"/><br></body><html>`, counter.Visit)
 }
 
 func errResponseWriter(w http.ResponseWriter, r *http.Request, msg string, code int) {
@@ -243,6 +243,6 @@ func generateCounterImage(counter Counter) (image.Image, error) {
 			Y: fixed.Int26_6((img.Rect.Dy() - 20) * 64),
 		},
 	}
-	d.DrawString(fmt.Sprintf("%04d", counter.Visit))
+	d.DrawString(fmt.Sprintf("%04d access", counter.Visit))
 	return img, nil
 }
