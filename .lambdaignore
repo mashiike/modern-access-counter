@@ -1,0 +1,12 @@
+.*
+function.json
+function.zip
+terraform.tfstate
+Makefile
+go.*
+*.go
+terraform
+terraform/*
+README.md
+LICENSE
+.envrc

@@ -1,0 +1,19 @@
+{
+  "FunctionName": "modern-access-counter",
+  "MemorySize": 256,
+  "Role": "{{ tfstate `aws_iam_role.function.arn` }}",
+  "Runtime": "provided.al2",
+  "Timeout": 30,
+  "Handler": "bootstrap",
+  "Environment": {
+    "Variables": {
+      "DDB_LOCK_URL": "{{ must_env `DDB_LOCK_URL` }}",
+      "S3_BUCKET": "{{ must_env `TF_VAR_data_bucket` }}",
+      "S3_OBJECT_PATH": "{{ must_env `S3_OBJECT_PATH` }}",
+      "DEBUG":"true"
+    }
+  },
+  "Tags": {
+    "repo": "https://github.com/mashiike/modern-access-counter"
+  }
+}
