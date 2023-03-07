@@ -10,7 +10,7 @@ require (
 	github.com/fujiwara/ridge v0.6.1
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0
 	github.com/mashiike/setddblock v0.3.2
-	golang.org/x/image v0.0.0-20211028202545-6944b10bf410
+	golang.org/x/image v0.5.0
 )
 
 require (
@@ -37,5 +37,5 @@ require (
 	github.com/pires/go-proxyproto v0.6.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/shogo82148/go-retry v1.1.1 // indirect
-	golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c // indirect
+	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
 )
